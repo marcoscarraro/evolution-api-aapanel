@@ -32,3 +32,4 @@ Para mais detalhes, consulte a documentação oficial:
 - [📖 Instalação via Docker](https://doc.evolution-api.com/v2/pt/install/docker)
 - [⚙️ Variáveis de Ambiente](https://doc.evolution-api.com/v2/pt/env)
 
+**Bug na versão 2.2.3** Ao gravar uma nova instancia retorna o erro `The column wavoipToken does not exist in the current database.` basta ajustar a tabela **settings** adicionando a coluna **wavoipToken** `ALTER TABLE setting ADD COLUMN IF NOT EXISTS wavoipToken VARCHAR(100);`
