@@ -1,0 +1,22 @@
+services:
+  evolution-api:
+    container_name: evolution-api
+    image: atendai/evolution-api:latest
+    restart: always
+    ports:
+      - 8080:8080
+    env_file:
+      - .env      
+    volumes:
+      - evolution_instances:/evolution/instances
+    expose:
+      - 8080
+    networks:
+      - baota_net
+
+volumes:
+  evolution_instances:
+  
+networks:
+  baota_net:
+    external: true
